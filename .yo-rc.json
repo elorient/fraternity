@@ -1,0 +1,36 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "com.fraternity.fsp",
+            "nativeLanguage": "fr"
+        },
+        "jhipsterVersion": "5.7.1",
+        "applicationType": "monolith",
+        "baseName": "fraternity",
+        "packageName": "com.fraternity.fsp",
+        "packageFolder": "com/fraternity/fsp",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "ehcache",
+        "enableHibernateCache": true,
+        "websocket": false,
+        "databaseType": "sql",
+        "devDatabaseType": "h2Disk",
+        "prodDatabaseType": "mysql",
+        "searchEngine": false,
+        "messageBroker": false,
+        "serviceDiscoveryType": false,
+        "buildTool": "maven",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "MWQyYjU1MDgyNzFlY2FhNjE0MThjZjU1Y2ZlZmFlMWYzNzBhYzY1M2E0Zjg4MDIzN2RkYzIyNDZjMDVkZjkwMGE2MzI2NWViMzcxN2YzYzhmNGIyMGM4NzQxMDA1YTI5YWI1NWQzM2VlOTZlYTRkZjg1ZDdmYTAyMDViMzAzMDI=",
+        "clientFramework": "angularX",
+        "useSass": true,
+        "clientPackageManager": "npm",
+        "testFrameworks": [],
+        "jhiPrefix": "jhi",
+        "otherModules": [],
+        "enableTranslation": true,
+        "nativeLanguage": "fr",
+        "languages": ["fr"]
+    }
+}

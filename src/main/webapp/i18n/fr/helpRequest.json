@@ -1,0 +1,27 @@
+{
+    "fraternityApp": {
+        "helpRequest": {
+            "home": {
+                "title": "HelpRequests",
+                "createLabel": "Créer un nouveau Help Request",
+                "createOrEditLabel": "Créer ou éditer un Help Request"
+            },
+            "created": "Un nouveau Help Request a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Help Request avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Help Request avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Help Request {{ id }} ?"
+            },
+            "detail": {
+                "title": "Help Request"
+            },
+            "title": "Title",
+            "description": "Description",
+            "datePost": "Date Post",
+            "dateStart": "Date Start",
+            "dateEnd": "Date End",
+            "helpR": "Help R",
+            "request": "Request"
+        }
+    }
+}

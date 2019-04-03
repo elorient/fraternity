@@ -38,6 +38,14 @@ public class CacheConfiguration {
             cm.createCache(com.fraternity.fsp.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.fraternity.fsp.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.fraternity.fsp.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.fraternity.fsp.domain.Association.class.getName(), jcacheConfiguration);
+            cm.createCache(com.fraternity.fsp.domain.AssociationMember.class.getName(), jcacheConfiguration);
+            cm.createCache(com.fraternity.fsp.domain.HelpOffer.class.getName(), jcacheConfiguration);
+            cm.createCache(com.fraternity.fsp.domain.HelpRequest.class.getName(), jcacheConfiguration);
+            cm.createCache(com.fraternity.fsp.domain.HelpAction.class.getName(), jcacheConfiguration);
+            cm.createCache(com.fraternity.fsp.domain.User.class.getName() + ".gives", jcacheConfiguration);
+            cm.createCache(com.fraternity.fsp.domain.User.class.getName() + ".requests", jcacheConfiguration);
+            cm.createCache(com.fraternity.fsp.domain.User.class.getName() + ".tos", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

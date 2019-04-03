@@ -1,0 +1,72 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fraternityApp.helpRequest.home.title">Help Requests</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-help-request" [routerLink]="['/help-request/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fraternityApp.helpRequest.home.createLabel">
+            Create new Help Request
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="helpRequests">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="fraternityApp.helpRequest.title">Title</span></th>
+            <th><span jhiTranslate="fraternityApp.helpRequest.description">Description</span></th>
+            <th><span jhiTranslate="fraternityApp.helpRequest.datePost">Date Post</span></th>
+            <th><span jhiTranslate="fraternityApp.helpRequest.dateStart">Date Start</span></th>
+            <th><span jhiTranslate="fraternityApp.helpRequest.dateEnd">Date End</span></th>
+            <th><span jhiTranslate="fraternityApp.helpRequest.helpR">Help R</span></th>
+            <th><span jhiTranslate="fraternityApp.helpRequest.request">Request</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let helpRequest of helpRequests ;trackBy: trackId">
+                <td><a [routerLink]="['/help-request', helpRequest.id, 'view' ]">{{helpRequest.id}}</a></td>
+                <td>{{helpRequest.title}}</td>
+                <td>{{helpRequest.description}}</td>
+                <td>{{helpRequest.datePost | date:'mediumDate'}}</td>
+                <td>{{helpRequest.dateStart | date:'mediumDate'}}</td>
+                <td>{{helpRequest.dateEnd | date:'mediumDate'}}</td>
+                <td>
+                    <div *ngIf="helpRequest.helpR">
+                        <a [routerLink]="['../help-action', helpRequest.helpR?.id, 'view' ]" >{{helpRequest.helpR?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    {{helpRequest.request?.login}}
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/help-request', helpRequest.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/help-request', helpRequest.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'help-request/'+ helpRequest.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

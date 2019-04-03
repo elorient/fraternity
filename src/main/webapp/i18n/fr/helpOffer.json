@@ -1,0 +1,27 @@
+{
+    "fraternityApp": {
+        "helpOffer": {
+            "home": {
+                "title": "HelpOffers",
+                "createLabel": "Créer un nouveau Help Offer",
+                "createOrEditLabel": "Créer ou éditer un Help Offer"
+            },
+            "created": "Un nouveau Help Offer a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Help Offer avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Help Offer avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Help Offer {{ id }} ?"
+            },
+            "detail": {
+                "title": "Help Offer"
+            },
+            "title": "Title",
+            "description": "Description",
+            "datePost": "Date Post",
+            "dateStart": "Date Start",
+            "dateEnd": "Date End",
+            "helpO": "Help O",
+            "give": "Give"
+        }
+    }
+}

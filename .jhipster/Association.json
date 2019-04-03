@@ -1,0 +1,30 @@
+{
+    "name": "Association",
+    "fields": [
+        {
+            "fieldName": "nSiret",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "statut",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "asso",
+            "otherEntityName": "associationMember",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190403141844",
+    "entityTableName": "association",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,72 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fraternityApp.helpOffer.home.title">Help Offers</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-help-offer" [routerLink]="['/help-offer/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fraternityApp.helpOffer.home.createLabel">
+            Create new Help Offer
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="helpOffers">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="fraternityApp.helpOffer.title">Title</span></th>
+            <th><span jhiTranslate="fraternityApp.helpOffer.description">Description</span></th>
+            <th><span jhiTranslate="fraternityApp.helpOffer.datePost">Date Post</span></th>
+            <th><span jhiTranslate="fraternityApp.helpOffer.dateStart">Date Start</span></th>
+            <th><span jhiTranslate="fraternityApp.helpOffer.dateEnd">Date End</span></th>
+            <th><span jhiTranslate="fraternityApp.helpOffer.helpO">Help O</span></th>
+            <th><span jhiTranslate="fraternityApp.helpOffer.give">Give</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let helpOffer of helpOffers ;trackBy: trackId">
+                <td><a [routerLink]="['/help-offer', helpOffer.id, 'view' ]">{{helpOffer.id}}</a></td>
+                <td>{{helpOffer.title}}</td>
+                <td>{{helpOffer.description}}</td>
+                <td>{{helpOffer.datePost | date:'mediumDate'}}</td>
+                <td>{{helpOffer.dateStart | date:'mediumDate'}}</td>
+                <td>{{helpOffer.dateEnd | date:'mediumDate'}}</td>
+                <td>
+                    <div *ngIf="helpOffer.helpO">
+                        <a [routerLink]="['../help-action', helpOffer.helpO?.id, 'view' ]" >{{helpOffer.helpO?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    {{helpOffer.give?.login}}
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/help-offer', helpOffer.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/help-offer', helpOffer.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'help-offer/'+ helpOffer.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

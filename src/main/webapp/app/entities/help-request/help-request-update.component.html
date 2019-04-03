@@ -1,0 +1,78 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-help-request-heading" jhiTranslate="fraternityApp.helpRequest.home.createOrEditLabel">Create or edit a Help Request</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!helpRequest.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="helpRequest.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fraternityApp.helpRequest.title" for="field_title">Title</label>
+                    <input type="text" class="form-control" name="title" id="field_title"
+                        [(ngModel)]="helpRequest.title" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fraternityApp.helpRequest.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                        [(ngModel)]="helpRequest.description" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fraternityApp.helpRequest.datePost" for="field_datePost">Date Post</label>
+                    <div class="input-group">
+                        <input id="field_datePost" type="text" class="form-control" name="datePost" ngbDatepicker  #datePostDp="ngbDatepicker" [(ngModel)]="helpRequest.datePost"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="datePostDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fraternityApp.helpRequest.dateStart" for="field_dateStart">Date Start</label>
+                    <div class="input-group">
+                        <input id="field_dateStart" type="text" class="form-control" name="dateStart" ngbDatepicker  #dateStartDp="ngbDatepicker" [(ngModel)]="helpRequest.dateStart"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateStartDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fraternityApp.helpRequest.dateEnd" for="field_dateEnd">Date End</label>
+                    <div class="input-group">
+                        <input id="field_dateEnd" type="text" class="form-control" name="dateEnd" ngbDatepicker  #dateEndDp="ngbDatepicker" [(ngModel)]="helpRequest.dateEnd"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateEndDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fraternityApp.helpRequest.helpR" for="field_helpR">Help R</label>
+                    <select class="form-control" id="field_helpR" name="helpR" [(ngModel)]="helpRequest.helpR" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="helpActionOption.id === helpRequest.helpR?.id ? helpRequest.helpR : helpActionOption" *ngFor="let helpActionOption of helpactions; trackBy: trackHelpActionById">{{helpActionOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fraternityApp.helpRequest.request" for="field_request">Request</label>
+                    <select class="form-control" id="field_request" name="request" [(ngModel)]="helpRequest.request" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === helpRequest.request?.id ? helpRequest.request : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

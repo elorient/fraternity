@@ -1,0 +1,22 @@
+{
+    "fraternityApp": {
+        "helpAction": {
+            "home": {
+                "title": "HelpActions",
+                "createLabel": "Créer un nouveau Help Action",
+                "createOrEditLabel": "Créer ou éditer un Help Action"
+            },
+            "created": "Un nouveau Help Action a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Help Action avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Help Action avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Help Action {{ id }} ?"
+            },
+            "detail": {
+                "title": "Help Action"
+            },
+            "to": "To",
+            "from": "From"
+        }
+    }
+}

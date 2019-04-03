@@ -1,0 +1,30 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "to",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "helpAction"
+        },
+        {
+            "relationshipName": "from",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "helpAction"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20190403141848",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "help_action",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

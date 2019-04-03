@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="helpRequest">
+            <h2><span jhiTranslate="fraternityApp.helpRequest.detail.title">Help Request</span> {{helpRequest.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fraternityApp.helpRequest.title">Title</span></dt>
+                <dd>
+                    <span>{{helpRequest.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="fraternityApp.helpRequest.description">Description</span></dt>
+                <dd>
+                    <span>{{helpRequest.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="fraternityApp.helpRequest.datePost">Date Post</span></dt>
+                <dd>
+                    <span>{{helpRequest.datePost}}</span>
+                </dd>
+                <dt><span jhiTranslate="fraternityApp.helpRequest.dateStart">Date Start</span></dt>
+                <dd>
+                    <span>{{helpRequest.dateStart}}</span>
+                </dd>
+                <dt><span jhiTranslate="fraternityApp.helpRequest.dateEnd">Date End</span></dt>
+                <dd>
+                    <span>{{helpRequest.dateEnd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fraternityApp.helpRequest.helpR">Help R</span></dt>
+                <dd>
+                    <div *ngIf="helpRequest.helpR">
+                        <a [routerLink]="['/help-action', helpRequest.helpR?.id, 'view']">{{helpRequest.helpR?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="fraternityApp.helpRequest.request">Request</span></dt>
+                <dd>
+                    {{helpRequest.request?.login}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/help-request', helpRequest.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

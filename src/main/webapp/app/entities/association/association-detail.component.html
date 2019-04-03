@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="association">
+            <h2><span jhiTranslate="fraternityApp.association.detail.title">Association</span> {{association.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fraternityApp.association.nSiret">N Siret</span></dt>
+                <dd>
+                    <span>{{association.nSiret}}</span>
+                </dd>
+                <dt><span jhiTranslate="fraternityApp.association.statut">Statut</span></dt>
+                <dd>
+                    <span>{{association.statut}}</span>
+                </dd>
+                <dt><span jhiTranslate="fraternityApp.association.asso">Asso</span></dt>
+                <dd>
+                    <div *ngIf="association.asso">
+                        <a [routerLink]="['/association-member', association.asso?.id, 'view']">{{association.asso?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/association', association.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

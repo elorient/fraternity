@@ -1,0 +1,23 @@
+{
+    "fraternityApp": {
+        "association": {
+            "home": {
+                "title": "Associations",
+                "createLabel": "Créer un nouveau Association",
+                "createOrEditLabel": "Créer ou éditer un Association"
+            },
+            "created": "Un nouveau Association a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Association avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Association avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Association {{ id }} ?"
+            },
+            "detail": {
+                "title": "Association"
+            },
+            "nSiret": "N Siret",
+            "statut": "Statut",
+            "asso": "Asso"
+        }
+    }
+}

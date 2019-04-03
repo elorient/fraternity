@@ -1,0 +1,21 @@
+{
+    "fraternityApp": {
+        "associationMember": {
+            "home": {
+                "title": "AssociationMembers",
+                "createLabel": "Créer un nouveau Association Member",
+                "createOrEditLabel": "Créer ou éditer un Association Member"
+            },
+            "created": "Un nouveau Association Member a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Association Member avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Association Member avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Association Member {{ id }} ?"
+            },
+            "detail": {
+                "title": "Association Member"
+            },
+            "isPresident": "Is President"
+        }
+    }
+}

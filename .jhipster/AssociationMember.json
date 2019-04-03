@@ -1,0 +1,19 @@
+{
+    "name": "AssociationMember",
+    "fields": [
+        {
+            "fieldName": "isPresident",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190403141845",
+    "entityTableName": "association_member",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
